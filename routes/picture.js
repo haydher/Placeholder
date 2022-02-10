@@ -2,10 +2,13 @@ const express = require("express");
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const router = express.Router();
 
+// main endpoint for getting a random picture for front end
 router.get("/:type?", async (req, res) => {
+ // if endpoint is random then return a random pic
  if (req.params.type === "random") {
-  const imgURL = await getRandomPic(req.query);
   try {
+   // redirected url from Unsplash
+   const imgURL = await getRandomPic(req.query);
    res.redirect(imgURL);
   } catch (error) {
    console.log("error in sending data");
@@ -20,12 +23,11 @@ router.get("/:type?", async (req, res) => {
  }
 });
 
+// get the random pic for the param with "random"
 const getRandomPic = async (query) => {
  const accessKey = process.env.ACCESS_KEY;
 
- console.log(updateUrl(query));
-
- const fetchURL = `https://api.unsplash.com/photos/random?client_id=${accessKey}&${updateUrl(query)}`;
+ const fetchURL = `https://api.unsplash.com/photos/random?client_id=${accessKey}&${getUpdatedUrl(query)}`;
 
  try {
   const response = await fetch(fetchURL);
@@ -37,7 +39,9 @@ const getRandomPic = async (query) => {
  }
 };
 
-const updateUrl = (query) => {
+// updates the api url with given query params
+const getUpdatedUrl = (query) => {
+ // return selected queries that are valid
  return Object.keys(query)
   .filter((key) => query[key].length > 0)
   .map((key) => `${key}=${query[key]}`)
