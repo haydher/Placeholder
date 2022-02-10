@@ -4,7 +4,6 @@ const picture = require("./routes/picture");
 
 require("dotenv").config();
 
-// app.use("/api/picture", picture);
 app.use("/api", picture);
 
 app.get("/", (req, res) => {
@@ -15,18 +14,6 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`connected to the port ${port}`));
 
 /*
-
-
-
-
-
-
-
-
-
-
-
-
 
 routes to random pictures
    number of pictures
