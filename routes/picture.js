@@ -46,6 +46,8 @@ const getUpdatedUrl = (query) => {
   .join("&");
 };
 
+module.exports = router;
+
 // router.get("/random", async (req, res) => {
 //  const url = "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg";
 //  res.send("success").redirect(url);
@@ -67,5 +69,3 @@ const getUpdatedUrl = (query) => {
 
 //  res.send(deleteObj);
 // });
-
-module.exports = router;

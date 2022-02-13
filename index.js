@@ -1,10 +1,12 @@
 const express = require("express");
 const picture = require("./routes/picture");
+const todo = require("./routes/todo");
 require("dotenv").config();
 
 const app = express();
 
-app.use("/api", picture);
+app.use("/photo", picture);
+app.use("/todo", todo);
 
 app.get("/", (req, res) => {
  res.send("Hello World");
@@ -30,6 +32,14 @@ routes to user posts
    date of upload 
    
 routes to to-do list
+   things to do
+   title
+   description
+   done or not
+   date to do
+   date done
+
+routes to random users
    things to do
    title
    description
