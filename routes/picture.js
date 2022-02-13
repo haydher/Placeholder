@@ -4,6 +4,8 @@ const router = express.Router();
 
 // main endpoint for getting a random picture for front end
 router.get("/:param?", async (req, res) => {
+ console.log("incoming req", req.params.param, req.query.number);
+
  const queryObj = {
   query: req.params.param,
   orientation: req.query.orientation,

@@ -1,8 +1,8 @@
 const express = require("express");
-const app = express();
 const picture = require("./routes/picture");
-
 require("dotenv").config();
+
+const app = express();
 
 app.use("/api", picture);
 
