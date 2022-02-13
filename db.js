@@ -1,4 +1,4 @@
-export const titles = [
+const titles = [
  ["Call eye doctor"],
  ["Call roofing company"],
  ["Get groceries from Gardner"],
@@ -31,10 +31,4 @@ export const titles = [
  ["Do the quiz for chemistry"],
 ];
 
-// routes to to-do list
-//    things to do
-//    title
-//    description
-//    done or not
-//    date to do
-//    date done
+module.exports = titles;
