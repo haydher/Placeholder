@@ -29,6 +29,12 @@ exports.titles = [
  "Do math homework",
  "Study for bio exam",
  "Do the quiz for chemistry",
+ "Learn about Polymer",
+ "Watch Plural sight course on Docker",
+ "Grocery shopping",
+ "Pick up the kids",
+ "Purchase airline ticket",
+ "Schedule dentist appointment",
 ];
 
 // https://github.com/terryweiss/dominictarr/random-name/
@@ -1638,6 +1644,7 @@ exports.addresses = [
  },
 ];
 
+// src = Unsplash
 exports.womanThumbnails = [
  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=480&q=80",
  "https://images.unsplash.com/photo-1534126416832-a88fdf2911c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=480&q=80",
@@ -1695,6 +1702,7 @@ exports.womanThumbnails = [
  "https://images.unsplash.com/photo-1511821057783-3edeee215a67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
 ];
 
+// src = Unsplash
 exports.manThumbnails = [
  "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
  "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80",
@@ -1754,7 +1762,7 @@ exports.manThumbnails = [
 
 // https://gist.github.com/nasrulhazim/
 // src = https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80
-exports.titles = [
+exports.postTitles = [
  "Life isn’t about getting and having, it’s about giving and being.",
  "Whatever the mind of man can conceive and believe, it can achieve.",
  "Strive not to be a success, but rather to be of value.",
