@@ -3,23 +3,21 @@ const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fet
 const router = express.Router();
 
 // main endpoint for getting a random picture for front end
-router.get("/:type?", async (req, res) => {
- // if endpoint is random then return a random pic
- if (req.params.type === "random") {
-  try {
-   // redirected url from Unsplash
-   const imgURL = await getRandomPic(req.query);
-   res.redirect(imgURL);
-  } catch (error) {
-   console.log("error in sending data");
-   res.send("unable to send data");
-  }
- } else {
-  try {
-   res.send(`end point reached ${req.params.type}`);
-  } catch (error) {
-   console.log("error");
-  }
+router.get("/:param?", async (req, res) => {
+ console.log("incoming req", req.params.param, req.query.number);
+
+ const queryObj = {
+  query: req.params.param,
+  orientation: req.query.orientation,
+ };
+
+ try {
+  // redirected url from Unsplash
+  const imgURL = await getRandomPic(queryObj);
+  res.redirect(imgURL);
+ } catch (error) {
+  console.log("error in sending data");
+  res.send("unable to send data");
  }
 });
 
@@ -43,10 +41,12 @@ const getRandomPic = async (query) => {
 const getUpdatedUrl = (query) => {
  // return selected queries that are valid
  return Object.keys(query)
-  .filter((key) => query[key].length > 0)
+  .filter((key) => query[key])
   .map((key) => `${key}=${query[key]}`)
   .join("&");
 };
+
+module.exports = router;
 
 // router.get("/random", async (req, res) => {
 //  const url = "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg";
@@ -69,5 +69,3 @@ const getUpdatedUrl = (query) => {
 
 //  res.send(deleteObj);
 // });
-
-module.exports = router;
