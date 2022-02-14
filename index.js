@@ -1,12 +1,15 @@
 const express = require("express");
 const picture = require("./routes/picture");
-const todo = require("./routes/todo");
+const todos = require("./routes/todos");
+const users = require("./routes/users");
+
 require("dotenv").config();
 
 const app = express();
 
 app.use("/photo", picture);
-app.use("/todo", todo);
+app.use("/todos", todos);
+app.use("/users", users);
 
 app.get("/", (req, res) => {
  res.send("Hello World");
@@ -17,11 +20,21 @@ app.listen(port, () => console.log(`connected to the port ${port}`));
 
 /*
 
+// done
 routes to random pictures
    number of pictures
    specific picture
    picture size 
-    
+       
+// done
+routes to to-do list
+   things to do
+   title
+   description
+   done or not
+   date to do
+   date done
+
 routes to user posts
    number of likes/upvotes
    number of dislikes/downvotes
@@ -30,14 +43,7 @@ routes to user posts
    likes on comments 
    description 
    date of upload 
-   
-routes to to-do list
-   things to do
-   title
-   description
-   done or not
-   date to do
-   date done
+
 
 routes to random users
    things to do
