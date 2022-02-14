@@ -37,6 +37,33 @@ const getRandNum = (minNum, maxNum) => {
 };
 
 //
+// get random user
+const getRandUser = (index) => {
+ const firstName = getRandFirstName();
+ const lastName = getRandLastName();
+ const username = getUserName(firstName, lastName);
+ const sex = Math.round(Math.random()) === 1 ? "female" : "male";
+ const address = getRandAddress();
+ const phone = Math.floor(getRandNum(1000000000, 9000000000));
+ const thumbnail = getRandThumbnail(sex);
+
+ return {
+  id: index + 1,
+  firstName,
+  lastName,
+  username: username,
+  sex,
+  thumbnail,
+  age: getRandNum(21, 65),
+  email: `${getUserName(firstName, lastName)}@${getRandomDomain()}.com`,
+  address,
+  phone,
+  phoneFormatted: formatePhoneNum(phone),
+  website: `www.${username.toLowerCase()}.com`,
+ };
+};
+
+//
 // returns random comments
 const getRandCommentObj = () => {
  const commentUploadDate = getRandomDate(new Date(`09/08/2021`), new Date());
@@ -182,4 +209,5 @@ module.exports = {
  getRandAddress,
  getRandPosts,
  getRandCommentObj,
+ getRandUser,
 };
