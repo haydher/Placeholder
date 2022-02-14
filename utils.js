@@ -37,17 +37,54 @@ const getRandNum = (minNum, maxNum) => {
 };
 
 //
+// returns random comments
+const getRandCommentObj = () => {
+ const commentUploadDate = getRandomDate(new Date(`09/08/2021`), new Date());
+ return {
+  comment: getRandComments(),
+  upVotes: getRandNum(0, 200),
+  downVotes: getRandNum(0, 100),
+  username: getUserName(),
+  thumbnail: getRandThumbnail(),
+  commentDate: commentUploadDate.toLocaleDateString(),
+  commentDateISO: commentUploadDate.toISOString(),
+ };
+};
+
+//
+// returns random posts
+const getRandPosts = (index, commentsArr) => {
+ const uploadDate = getRandomDate(new Date(`08/08/2021`), new Date());
+
+ let postIndex = !index || !parseInt(index) || parseInt(index) <= 0 ? 0 : parseInt(index);
+
+ return {
+  id: postIndex + 1,
+  username: getUserName(),
+  thumbnail: getRandThumbnail(),
+  pictures: [getRandThumbnail(), getRandThumbnail(), getRandThumbnail(), getRandThumbnail(), getRandThumbnail()],
+  description: getRandDescription(),
+  upVotes: getRandNum(0, 1000),
+  downVotes: getRandNum(0, 500),
+  uploadDate: uploadDate.toLocaleDateString(),
+  uploadDateISO: uploadDate.toISOString(),
+  comments: commentsArr,
+ };
+};
+
+//
 // returns a random date between today and a week from now
 const getRandomDate = (dateStart, dateEnd, gap) => {
  // gap between two dates
  const dateGap = parseInt(gap) || 7;
 
  // get todays date
- const startDate = Object.prototype.toString.call(dateStart) === "[object Date]" || new Date();
+ const startDate = Object.prototype.toString.call(dateStart) === "[object Date]" ? dateStart : new Date();
  // get the date a week from now
  const endDate =
-  Object.prototype.toString.call(dateEnd) === "[object Date]" ||
-  new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + dateGap);
+  Object.prototype.toString.call(dateEnd) === "[object Date]"
+   ? dateEnd
+   : new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + dateGap);
 
  return new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
 };
@@ -143,4 +180,6 @@ module.exports = {
  getRandThumbnail,
  getRandComments,
  getRandAddress,
+ getRandPosts,
+ getRandCommentObj,
 };
