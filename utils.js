@@ -1,3 +1,5 @@
+const { firstNames, lastNames, postTitles, comments, womanThumbnails, manThumbnails, addresses } = require("./db");
+
 // return random string based on whats given with min and max length
 const getRandStr = (str, minLength, maxLength) => {
  const string =
@@ -36,13 +38,16 @@ const getRandNum = (minNum, maxNum) => {
 
 //
 // returns a random date between today and a week from now
-const getRandomDate = (dateStart, dateEnd) => {
+const getRandomDate = (dateStart, dateEnd, gap) => {
+ // gap between two dates
+ const dateGap = parseInt(gap) || 7;
+
  // get todays date
  const startDate = Object.prototype.toString.call(dateStart) === "[object Date]" || new Date();
  // get the date a week from now
  const endDate =
   Object.prototype.toString.call(dateEnd) === "[object Date]" ||
-  new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + 7);
+  new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + dateGap);
 
  return new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
 };
@@ -54,10 +59,8 @@ const getRandomBool = () => (Math.round(Math.random()) >= 1 ? true : false);
 //
 // return a random username based on first and last name
 const getUserName = (fName, lName) => {
- if (!fName || !lName) return null;
-
- const firstName = fName.toString();
- const lastName = lName.toString();
+ const firstName = fName?.toString() || getRandFirstName();
+ const lastName = lName?.toString() || getRandLastName();
 
  const usernames = [
   `${firstName}_${lastName}`,
@@ -77,6 +80,47 @@ const getUserName = (fName, lName) => {
 };
 
 //
+// get random first names
+const getRandFirstName = (userFNameArr) =>
+ firstNames[getRandNum(0, firstNames.length - 1)] ||
+ (Array.isArray(userFNameArr) && userFNameArr[getRandNum(0, userFNameArr.length - 1)]);
+
+//
+// get random last names
+const getRandLastName = (userLNameArr) =>
+ lastNames[getRandNum(0, lastNames.length - 1)] ||
+ (Array.isArray(userLNameArr) && userLNameArr[getRandNum(0, userLNameArr.length - 1)]);
+
+//
+// get random post description
+// get random first names
+const getRandDescription = (userDescArr) =>
+ postTitles[getRandNum(0, postTitles.length - 1)] ||
+ (Array.isArray(userDescArr) && userDescArr[getRandNum(0, userDescArr.length - 1)]);
+
+//
+// get random comments
+// get random first names
+const getRandComments = (userCommentArr) =>
+ comments[getRandNum(0, comments.length - 1)] ||
+ (Array.isArray(userCommentArr) && userCommentArr[getRandNum(0, userCommentArr.length - 1)]);
+
+//
+// get random address
+const getRandAddress = (userAddArr) =>
+ addresses[getRandNum(0, addresses.length - 1)] ||
+ (Array.isArray(userAddArr) && userAddArr[getRandNum(0, userAddArr.length - 1)]);
+
+//
+// get random thumbnail/picture
+const getRandThumbnail = (sex) => {
+ const randSex = Math.round(Math.random()) === 1 ? "female" : "male" || sex.toString();
+ return randSex === "female"
+  ? womanThumbnails[getRandNum(0, womanThumbnails.length - 1)]
+  : manThumbnails[getRandNum(0, manThumbnails.length - 1)];
+};
+
+//
 // formate phone number
 const formatePhoneNum = (phoneNumber) => {
  const cleaned = ("" + phoneNumber).replace(/\D/g, "");
@@ -93,4 +137,10 @@ module.exports = {
  getUserName,
  getRandomDomain,
  formatePhoneNum,
+ getRandFirstName,
+ getRandLastName,
+ getRandDescription,
+ getRandThumbnail,
+ getRandComments,
+ getRandAddress,
 };

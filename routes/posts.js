@@ -1,115 +1,62 @@
 const express = require("express");
 const router = express.Router();
-const { getRandNum, getUserName, getRandomDomain, formatePhoneNum } = require("../utils");
-const { firstNames, lastNames, postTitles, comments, womanThumbnails, manThumbnails } = require("../db");
-
-// number of likes/upvotes
-// number of dislikes/downvotes
-// multiple pictures for post
-// comments
-// likes on comments
-// description
-// date of upload
-
-
-const obj = {
- id: 0,
- pictures: ["", "",],
- description: "",
- upVotes: 0,
- downVotes: 0,
- uploadDate: "",
- uploadDateISO: "",
- comments: [
-  {
-   comment: "",
-   upVotes: 0,
-   downVotes: 0,
-   username: "",
-   thumbnail: "",
-   date: "",
-   dateISO: "",
-  }
- ]
-}
-
-// 
-// 
-// 
-// 
-// 
-// 
-//  finish this part, add posts, comments etc
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-
+const {
+ getUserName,
+ getRandDescription,
+ getRandThumbnail,
+ getRandComments,
+ getRandNum,
+ getRandomDate,
+} = require("../utils");
 
 router.get("/:length?", (req, res) => {
-
+ // for  params
  const limit = 50;
  const param = Math.abs(parseInt(req.params.length)) >= limit ? limit : Math.abs(parseInt(req.params.length));
  const length = param || 1;
 
+ // for query
+ const commentsLimit = 15;
+ const query =
+  Math.abs(parseInt(req.query.comments)) >= commentsLimit ? commentsLimit : Math.abs(parseInt(req.query.comments));
+ const commentQuery = query || 0;
+
+ // final posts go here
  const posts = [];
 
  for (let index = 0; index < length; index++) {
-  const firstName = firstNames[getRandNum(0, firstNames.length - 1)];
-  const lastName = lastNames[getRandNum(0, lastNames.length - 1)];
-  const username = getUserName(firstName, lastName);
-  const sex = Math.round(Math.random()) === 1 ? "female" : "male";
-  const address = addresses[getRandNum(0, addresses.length - 1)];
-  const phone = Math.floor(getRandNum(1000000000, 9000000000));
-  const thumbnail =
-   sex === "female"
-    ? womanThumbnails[getRandNum(0, womanThumbnails.length - 1)]
-    : manThumbnails[getRandNum(0, manThumbnails.length - 1)];
-  const description = postTitles[getRandNum(0, postTitles.length - 1)]
+  // all the comments go here
+  let commentsArr = [];
 
-
-  for(let j = 0; j <= 10; 1)
-  let comment = {
-   comment: comments[getRandNum(0, comments.length - 1)],
-   upVotes: 0,
-   downVotes: 0,
-   username: "",
-   thumbnail: "",
-   date: "",
-   dateISO: "",
-  };
-
+  // if there is a query for comments then add comments as well. limit is 15 per post
+  if (commentQuery > 0)
+   for (let j = 0; j < commentQuery; j++) {
+    commentsArr.push({
+     comment: getRandComments(),
+     upVotes: getRandNum(0, 200),
+     downVotes: getRandNum(0, 100),
+     username: getUserName(),
+     thumbnail: getRandThumbnail(),
+     commentDate: getRandomDate().toLocaleDateString(),
+     commentDateISO: getRandomDate().toISOString(),
+    });
+   }
 
   posts.push({
    id: index + 1,
-   username: username,
-   thumbnail,
-
-   pictures: ["", "",],
-   description,
-   upVotes: 0,
-   downVotes: 0,
-   uploadDate: "",
-   uploadDateISO: "",
-   comments: [
-    {
-     comment: comments[getRandNum(0, comments.length - 1)],
-     upVotes: 0,
-     downVotes: 0,
-     username: "",
-     thumbnail: "",
-     date: "",
-     dateISO: "",
-    }
-   ]
+   username: getUserName(),
+   thumbnail: getRandThumbnail(),
+   pictures: [getRandThumbnail(), getRandThumbnail(), getRandThumbnail(), getRandThumbnail(), getRandThumbnail()],
+   description: getRandDescription(),
+   upVotes: getRandNum(0, 1000),
+   downVotes: getRandNum(0, 500),
+   uploadDate: getRandomDate().toLocaleDateString(),
+   uploadDateISO: getRandomDate().toISOString(),
+   comments: commentsArr,
   });
  }
 
  res.send({ status: 200, posts });
-
 });
+
 module.exports = router;
