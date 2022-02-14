@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const todo = require("../titles");
+const { titles } = require("../db");
 const { getRandStr, getRandomBool, getRandomDate } = require("../utils");
 
 router.get("/:length?", async (req, res) => {
- const todoList = todo;
+ const todoTitles = titles;
 
  const limit = 50;
  const param = Math.abs(parseInt(req.params.length)) >= limit ? limit : Math.abs(parseInt(req.params.length));
@@ -14,7 +14,7 @@ router.get("/:length?", async (req, res) => {
  for (let index = 0; index < length; index++) {
   data.push({
    id: index + 1,
-   title: `${todoList[Math.floor(Math.random() * (todoList.length - 0 + 1)) + 0]}`,
+   title: `${todoTitles[Math.floor(Math.random() * (todoTitles.length - 0 + 1)) + 0]}`,
    description: getRandStr(),
    completed: getRandomBool(),
    date: getRandomDate().toLocaleDateString(),
