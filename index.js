@@ -2,6 +2,7 @@ const express = require("express");
 const picture = require("./routes/picture");
 const todos = require("./routes/todos");
 const users = require("./routes/users");
+const posts = require("./routes/posts");
 
 require("dotenv").config();
 
@@ -10,6 +11,7 @@ const app = express();
 app.use("/photo", picture);
 app.use("/todos", todos);
 app.use("/users", users);
+app.use("/posts", posts);
 
 app.get("/", (req, res) => {
  res.send("Hello World");
@@ -35,6 +37,17 @@ routes to to-do list
    date to do
    date done
 
+// done
+routes to random users
+   full name
+   username
+   picture
+   email
+   address
+   phone
+   website
+
+
 routes to user posts
    number of likes/upvotes
    number of dislikes/downvotes
@@ -44,14 +57,6 @@ routes to user posts
    description 
    date of upload 
 
-
-routes to random users
-   things to do
-   title
-   description
-   done or not
-   date to do
-   date done
    
 routes to e-commerce
    name of product
@@ -70,8 +75,5 @@ routes to e-commerce
    available inventory
    user rating
    color
-   
-routes to user posts
-   number of likes/upvotes
 
 */

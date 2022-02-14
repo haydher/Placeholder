@@ -1,7 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const { getRandNum, getUserName, getRandomDomain, formatePhoneNum } = require("../utils");
-const { firstNames, lastNames, addresses, womanThumbnails, manThumbnails } = require("../db");
+const {
+ getRandNum,
+ getUserName,
+ getRandomDomain,
+ formatePhoneNum,
+ getRandThumbnail,
+ getRandFirstName,
+ getRandLastName,
+ getRandAddress,
+} = require("../utils");
 
 router.get("/:length?", (req, res) => {
  const limit = 50;
@@ -11,16 +19,13 @@ router.get("/:length?", (req, res) => {
  const users = [];
 
  for (let index = 0; index < length; index++) {
-  const firstName = firstNames[getRandNum(0, firstNames.length - 1)];
-  const lastName = lastNames[getRandNum(0, lastNames.length - 1)];
+  const firstName = getRandFirstName();
+  const lastName = getRandLastName();
   const username = getUserName(firstName, lastName);
   const sex = Math.round(Math.random()) === 1 ? "female" : "male";
-  const address = addresses[getRandNum(0, addresses.length - 1)];
-  const phone = Math.floor(getRandNum(9000000000, 1000000000));
-  const thumbnail =
-   sex === "female"
-    ? womanThumbnails[getRandNum(0, womanThumbnails.length - 1)]
-    : manThumbnails[getRandNum(0, manThumbnails.length - 1)];
+  const address = getRandAddress();
+  const phone = Math.floor(getRandNum(1000000000, 9000000000));
+  const thumbnail = getRandThumbnail(sex);
 
   users.push({
    id: index + 1,
@@ -34,7 +39,7 @@ router.get("/:length?", (req, res) => {
    address,
    phone,
    phoneFormatted: formatePhoneNum(phone),
-   website: `www.${username}.com`,
+   website: `www.${username.toLocaleLowerCase()}.com`,
   });
  }
 
