@@ -16,7 +16,7 @@ router.get("/:length?", (req, res) => {
   const username = getUserName(firstName, lastName);
   const sex = Math.round(Math.random()) === 1 ? "female" : "male";
   const address = addresses[getRandNum(0, addresses.length - 1)];
-  const phone = Math.floor(getRandNum(9000000000, 1000000000));
+  const phone = Math.floor(getRandNum(1000000000, 9000000000));
   const thumbnail =
    sex === "female"
     ? womanThumbnails[getRandNum(0, womanThumbnails.length - 1)]
@@ -34,7 +34,7 @@ router.get("/:length?", (req, res) => {
    address,
    phone,
    phoneFormatted: formatePhoneNum(phone),
-   website: `www.${username}.com`,
+   website: `www.${username.toLocaleLowerCase()}.com`,
   });
  }
 
