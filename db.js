@@ -637,7 +637,7 @@ exports.lastNames = [
 // src = https://github.com/EthanRBrown/rrad/blob/master/addresses-us-100.json
 exports.addresses = [
  {
-  address1: "1745 T Street Southeast",
+  street: "1745 T Street Southeast",
   city: "Washington",
   state: "DC",
   postalCode: "20020",
@@ -647,7 +647,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "6007 Applegate Lane",
+  street: "6007 Applegate Lane",
   city: "Louisville",
   state: "KY",
   postalCode: "40219",
@@ -657,7 +657,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "560 Penstock Drive",
+  street: "560 Penstock Drive",
   city: "Grass Valley",
   state: "CA",
   postalCode: "95945",
@@ -667,7 +667,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "150 Carter Street",
+  street: "150 Carter Street",
   city: "Manchester",
   state: "CT",
   postalCode: "06040",
@@ -677,7 +677,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "2721 Lindsay Avenue",
+  street: "2721 Lindsay Avenue",
   city: "Louisville",
   state: "KY",
   postalCode: "40206",
@@ -687,7 +687,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "18 Densmore Drive",
+  street: "18 Densmore Drive",
   city: "Essex",
   state: "VT",
   postalCode: "05452",
@@ -697,7 +697,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "637 Britannia Drive",
+  street: "637 Britannia Drive",
   city: "Vallejo",
   state: "CA",
   postalCode: "94591",
@@ -707,7 +707,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5601 West Crocus Drive",
+  street: "5601 West Crocus Drive",
   city: "Glendale",
   state: "AZ",
   postalCode: "85306",
@@ -717,7 +717,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5403 Illinois Avenue",
+  street: "5403 Illinois Avenue",
   city: "Nashville",
   state: "TN",
   postalCode: "37209",
@@ -727,7 +727,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8821 West Myrtle Avenue",
+  street: "8821 West Myrtle Avenue",
   city: "Glendale",
   state: "AZ",
   postalCode: "85305",
@@ -737,7 +737,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "2203 7th Street Road",
+  street: "2203 7th Street Road",
   city: "Louisville",
   state: "KY",
   postalCode: "40208",
@@ -747,7 +747,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "6463 Vrain Street",
+  street: "6463 Vrain Street",
   city: "Arvada",
   state: "CO",
   postalCode: "80003",
@@ -757,7 +757,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "87 Horseshoe Drive",
+  street: "87 Horseshoe Drive",
   city: "West Windsor",
   state: "VT",
   postalCode: "05037",
@@ -767,7 +767,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "60 Desousa Drive",
+  street: "60 Desousa Drive",
   city: "Manchester",
   state: "CT",
   postalCode: "06040",
@@ -777,7 +777,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "4 Old Colony Way",
+  street: "4 Old Colony Way",
   city: "Yarmouth",
   state: "MA",
   postalCode: "02664",
@@ -787,7 +787,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "314 South 17th Street",
+  street: "314 South 17th Street",
   city: "Nashville",
   state: "TN",
   postalCode: "37206",
@@ -797,7 +797,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1649 Timberridge Court",
+  street: "1649 Timberridge Court",
   city: "Fayetteville",
   state: "AR",
   postalCode: "72704",
@@ -807,7 +807,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5461 West Shades Valley Drive",
+  street: "5461 West Shades Valley Drive",
 
   city: "Montgomery",
   state: "AL",
@@ -818,7 +818,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "629 Debbie Drive",
+  street: "629 Debbie Drive",
 
   city: "Nashville",
   state: "TN",
@@ -829,7 +829,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "22572 Toreador Drive",
+  street: "22572 Toreador Drive",
 
   city: "Salinas",
   state: "CA",
@@ -840,7 +840,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "3034 Mica Street",
+  street: "3034 Mica Street",
 
   city: "Fayetteville",
   state: "AR",
@@ -851,7 +851,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "3729 East Mission Boulevard",
+  street: "3729 East Mission Boulevard",
 
   city: "Fayetteville",
   state: "AR",
@@ -862,7 +862,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5114 Greentree Drive",
+  street: "5114 Greentree Drive",
 
   city: "Nashville",
   state: "TN",
@@ -873,7 +873,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "3466 Southview Avenue",
+  street: "3466 Southview Avenue",
 
   city: "Montgomery",
   state: "AL",
@@ -884,7 +884,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1513 Cathy Street",
+  street: "1513 Cathy Street",
 
   city: "Savannah",
   state: "GA",
@@ -895,7 +895,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "600 West 19th Avenue",
+  street: "600 West 19th Avenue",
   city: "Anchorage",
   state: "AK",
   postalCode: "99503",
@@ -905,7 +905,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1208 Elkader Court North",
+  street: "1208 Elkader Court North",
 
   city: "Nashville",
   state: "TN",
@@ -916,7 +916,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "210 Green Road",
+  street: "210 Green Road",
 
   city: "Manchester",
   state: "CT",
@@ -927,7 +927,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "49548 Road 200",
+  street: "49548 Road 200",
 
   city: "O'Neals",
   state: "CA",
@@ -938,7 +938,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "81 Seaton Place Northwest",
+  street: "81 Seaton Place Northwest",
 
   city: "Washington",
   state: "DC",
@@ -949,7 +949,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1267 Martin Street",
+  street: "1267 Martin Street",
   city: "Nashville",
   state: "TN",
   postalCode: "37203",
@@ -959,7 +959,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "7431 Candace Way",
+  street: "7431 Candace Way",
   city: "Louisville",
   state: "KY",
   postalCode: "40214",
@@ -969,8 +969,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1407 Walden Court",
-
+  street: "1407 Walden Court",
   city: "Crofton",
   state: "MD",
   postalCode: "21114",
@@ -980,8 +979,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5906 Milton Avenue",
-
+  street: "5906 Milton Avenue",
   city: "Deale",
   state: "MD",
   postalCode: "20751",
@@ -991,7 +989,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "74 Springfield Street",
+  street: "74 Springfield Street",
   city: "Agawam",
   state: "MA",
   postalCode: "01001",
@@ -1001,8 +999,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "2905 Stonebridge Court",
-
+  street: "2905 Stonebridge Court",
   city: "Norman",
   state: "OK",
   postalCode: "73071",
@@ -1012,8 +1009,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "20930 Todd Valley Road",
-
+  street: "20930 Todd Valley Road",
   city: "Foresthill",
   state: "CA",
   postalCode: "95631",
@@ -1023,8 +1019,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5928 West Mauna Loa Lane",
-
+  street: "5928 West Mauna Loa Lane",
   city: "Glendale",
   state: "AZ",
   postalCode: "85306",
@@ -1034,8 +1029,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "802 Madison Street Northwest",
-
+  street: "802 Madison Street Northwest",
   city: "Washington",
   state: "DC",
   postalCode: "20011",
@@ -1045,8 +1039,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "2811 Battery Place Northwest",
-
+  street: "2811 Battery Place Northwest",
   city: "Washington",
   state: "DC",
   postalCode: "20016",
@@ -1056,8 +1049,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "210 Lacross Lane",
-
+  street: "210 Lacross Lane",
   city: "Westmore",
   state: "VT",
   postalCode: "05860",
@@ -1067,8 +1059,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "2010 Rising Hill Drive",
-
+  street: "2010 Rising Hill Drive",
   city: "Norman",
   state: "OK",
   postalCode: "73071",
@@ -1078,8 +1069,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "388 East Main Street",
-
+  street: "388 East Main Street",
   state: "VT",
   postalCode: "05753",
   coordinates: {
@@ -1088,8 +1078,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "450 Kinhawk Drive",
-
+  street: "450 Kinhawk Drive",
   city: "Nashville",
   state: "TN",
   postalCode: "37211",
@@ -1099,8 +1088,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "131 Westerly Street",
-
+  street: "131 Westerly Street",
   city: "Manchester",
   state: "CT",
   postalCode: "06042",
@@ -1110,8 +1098,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "308 Woodleaf Court",
-
+  street: "308 Woodleaf Court",
   city: "Glen Burnie",
   state: "MD",
   postalCode: "21061",
@@ -1121,8 +1108,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8502 Madrone Avenue",
-
+  street: "8502 Madrone Avenue",
   city: "Louisville",
   state: "KY",
   postalCode: "40258",
@@ -1132,8 +1118,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "23 Sable Run Lane",
-
+  street: "23 Sable Run Lane",
   city: "Methuen",
   state: "MA",
   postalCode: "01844",
@@ -1143,8 +1128,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "716 Waller Road",
-
+  street: "716 Waller Road",
   city: "Brentwood",
   state: "TN",
   postalCode: "37027",
@@ -1154,8 +1138,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "416 McIver Street",
-
+  street: "416 McIver Street",
   city: "Nashville",
   state: "TN",
   postalCode: "37211",
@@ -1165,8 +1148,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1508 Massachusetts Avenue Southeast",
-
+  street: "1508 Massachusetts Avenue Southeast",
   city: "Washington",
   state: "DC",
   postalCode: "20003",
@@ -1176,8 +1158,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5615 West Villa Maria Drive",
-
+  street: "5615 West Villa Maria Drive",
   city: "Glendale",
   state: "AZ",
   postalCode: "85308",
@@ -1187,7 +1168,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "3162 Martin Luther King Junior Boulevard",
+  street: "3162 Martin Luther King Junior Boulevard",
   city: "Fayetteville",
   state: "AR",
   postalCode: "72704",
@@ -1197,8 +1178,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5306 Ritchie Highway",
-
+  street: "5306 Ritchie Highway",
   city: "Baltimore",
   state: "MD",
   postalCode: "21225",
@@ -1208,8 +1188,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "109 Summit Street",
-
+  street: "109 Summit Street",
   city: "Burlington",
   state: "VT",
   postalCode: "05401",
@@ -1219,8 +1198,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "816 West 19th Avenue",
-
+  street: "816 West 19th Avenue",
   city: "Anchorage",
   state: "AK",
   postalCode: "99503",
@@ -1230,8 +1208,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "172 Alburg Springs Road",
-
+  street: "172 Alburg Springs Road",
   city: "Alburgh",
   state: "VT",
   postalCode: "05440",
@@ -1241,7 +1218,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "159 Downey Drive",
+  street: "159 Downey Drive",
   city: "Manchester",
   state: "CT",
   postalCode: "06040",
@@ -1251,8 +1228,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "125 John Street",
-
+  street: "125 John Street",
   city: "Santa Cruz",
   state: "CA",
   postalCode: "95060",
@@ -1262,8 +1238,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1101 Lotus Avenue",
-
+  street: "1101 Lotus Avenue",
   city: "Glen Burnie",
   state: "MD",
   postalCode: "21061",
@@ -1273,8 +1248,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8376 Albacore Drive",
-
+  street: "8376 Albacore Drive",
   city: "Pasadena",
   state: "MD",
   postalCode: "21122",
@@ -1284,8 +1258,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "491 Arabian Way",
-
+  street: "491 Arabian Way",
   city: "Grand Junction",
   state: "CO",
   postalCode: "81504",
@@ -1295,8 +1268,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "12245 West 71st Place",
-
+  street: "12245 West 71st Place",
   city: "Arvada",
   state: "CO",
   postalCode: "80004",
@@ -1306,7 +1278,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "80 North East Street",
+  street: "80 North East Street",
   city: "Holyoke",
   state: "MA",
   postalCode: "01040",
@@ -1316,8 +1288,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "4695 East Huntsville Road",
-
+  street: "4695 East Huntsville Road",
   city: "Fayetteville",
   state: "AR",
   postalCode: "72701",
@@ -1327,8 +1298,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "310 Timrod Road",
-
+  street: "310 Timrod Road",
   city: "Manchester",
   state: "CT",
   postalCode: "06040",
@@ -1338,8 +1308,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1364 Capri Drive",
-
+  street: "1364 Capri Drive",
   city: "Panama City",
   state: "FL",
   postalCode: "32405",
@@ -1349,8 +1318,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "132 Laurel Green Court",
-
+  street: "132 Laurel Green Court",
   city: "Savannah",
   state: "GA",
   postalCode: "31419",
@@ -1360,8 +1328,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "6657 West Rose Garden Lane",
-
+  street: "6657 West Rose Garden Lane",
   city: "Glendale",
   state: "AZ",
   postalCode: "85308",
@@ -1371,7 +1338,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "519 West 75th Avenue",
+  street: "519 West 75th Avenue",
   city: "Anchorage",
   state: "AK",
   postalCode: "99518",
@@ -1381,8 +1348,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "31353 Santa Elena Way",
-
+  street: "31353 Santa Elena Way",
   city: "Union City",
   state: "CA",
   postalCode: "94587",
@@ -1392,8 +1358,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8398 West Denton Lane",
-
+  street: "8398 West Denton Lane",
   city: "Glendale",
   state: "AZ",
   postalCode: "85305",
@@ -1403,8 +1368,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "700 Winston Place",
-
+  street: "700 Winston Place",
   city: "Anchorage",
   state: "AK",
   postalCode: "99504",
@@ -1414,8 +1378,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "232 Maine Avenue",
-
+  street: "232 Maine Avenue",
   city: "Panama City",
   state: "FL",
   postalCode: "32401",
@@ -1425,8 +1388,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1 Kempf Drive",
-
+  street: "1 Kempf Drive",
   city: "Easton",
   state: "MA",
   postalCode: "02375",
@@ -1436,8 +1398,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5811 Crossings Boulevard",
-
+  street: "5811 Crossings Boulevard",
   city: "Nashville",
   state: "TN",
   postalCode: "37013",
@@ -1447,8 +1408,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "5108 Franklin Street",
-
+  street: "5108 Franklin Street",
   city: "Savannah",
   state: "GA",
   postalCode: "31405",
@@ -1458,8 +1418,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "913 Fallview Trail",
-
+  street: "913 Fallview Trail",
   city: "Nashville",
   state: "TN",
   postalCode: "37211",
@@ -1469,8 +1428,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "270 Chrissy's Court",
-
+  street: "270 Chrissy's Court",
   state: "VT",
   postalCode: "05443",
   coordinates: {
@@ -1479,8 +1437,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "130 Old Route 103",
-
+  street: "130 Old Route 103",
   city: "Chester",
   state: "VT",
   postalCode: "05143",
@@ -1490,8 +1447,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "10826 Pointe Royal Drive",
-
+  street: "10826 Pointe Royal Drive",
   city: "Bakersfield",
   state: "CA",
   postalCode: "93311",
@@ -1501,8 +1457,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "74 Ranch Drive",
-
+  street: "74 Ranch Drive",
   city: "Montgomery",
   state: "AL",
   postalCode: "36109",
@@ -1512,8 +1467,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "6601 West Ocotillo Road",
-
+  street: "6601 West Ocotillo Road",
   city: "Glendale",
   state: "AZ",
   postalCode: "85301",
@@ -1523,8 +1477,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "19416 Barclay Road",
-
+  street: "19416 Barclay Road",
   city: "Castro Valley",
   state: "CA",
   postalCode: "94546",
@@ -1534,8 +1487,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1347 Blackwalnut Court",
-
+  street: "1347 Blackwalnut Court",
   city: "Annapolis",
   state: "MD",
   postalCode: "21403",
@@ -1545,8 +1497,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1770 Colony Way",
-
+  street: "1770 Colony Way",
   city: "Fayetteville",
   state: "AR",
   postalCode: "72704",
@@ -1556,8 +1507,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "165 Saint John Street",
-
+  street: "165 Saint John Street",
   city: "Manchester",
   state: "CT",
   postalCode: "06040",
@@ -1567,8 +1517,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "2409 Research Boulevard",
-
+  street: "2409 Research Boulevard",
   city: "Fort Collins",
   state: "CO",
   postalCode: "80526",
@@ -1578,8 +1527,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1903 Bashford Manor Lane",
-
+  street: "1903 Bashford Manor Lane",
   city: "Louisville",
   state: "KY",
   postalCode: "40218",
@@ -1589,8 +1537,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8315 Surf Drive",
-
+  street: "8315 Surf Drive",
   city: "Panama City Beach",
   state: "FL",
   postalCode: "32408",
@@ -1600,8 +1547,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "3301 Old Muldoon Road",
-
+  street: "3301 Old Muldoon Road",
   city: "Anchorage",
   state: "AK",
   postalCode: "99504",
@@ -1611,7 +1557,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8800 Cordell Circle",
+  street: "8800 Cordell Circle",
   city: "Anchorage",
   state: "AK",
   postalCode: "99502",
@@ -1621,8 +1567,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "117 East Cook Avenue",
-
+  street: "117 East Cook Avenue",
   city: "Anchorage",
   state: "AK",
   postalCode: "99501",
@@ -1632,7 +1577,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "6231 North 67th Avenue",
+  street: "6231 North 67th Avenue",
   city: "Glendale",
   state: "AZ",
   postalCode: "85301",
@@ -1642,7 +1587,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "8505 Waters Avenue",
+  street: "8505 Waters Avenue",
   city: "Savannah",
   state: "GA",
   postalCode: "31406",
@@ -1652,8 +1597,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "7 Underwood Place Northwest",
-
+  street: "7 Underwood Place Northwest",
   city: "Washington",
   state: "DC",
   postalCode: "20012",
@@ -1663,8 +1607,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "21950 Arnold Center Road",
-
+  street: "21950 Arnold Center Road",
   city: "Carson",
   state: "CA",
   postalCode: "90810",
@@ -1674,8 +1617,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1427 South Carolina Avenue Southeast",
-
+  street: "1427 South Carolina Avenue Southeast",
   city: "Washington",
   state: "DC",
   postalCode: "20003",
@@ -1685,8 +1627,7 @@ exports.addresses = [
   },
  },
  {
-  address1: "1420 Turtleback Trail",
-
+  street: "1420 Turtleback Trail",
   city: "Panama City",
   state: "FL",
   postalCode: "32413",

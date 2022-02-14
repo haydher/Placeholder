@@ -1,21 +1,37 @@
 const express = require("express");
 const router = express.Router();
+const { getRandNum, getUserName, getRandomDomain, formatePhoneNum } = require("../utils");
+const { firstNames, lastNames, addresses } = require("../db");
 
-router.get("/", (req, res) => {
- res.send({ status: 200 });
+router.get("/:length?", (req, res) => {
+ const limit = 50;
+ const param = Math.abs(parseInt(req.params.length)) >= limit ? limit : Math.abs(parseInt(req.params.length));
+ const length = param || 1;
+
+ const users = [];
+
+ for (let index = 0; index < length; index++) {
+  const firstName = firstNames[getRandNum(0, firstNames.length - 1)];
+  const lastName = lastNames[getRandNum(0, lastNames.length - 1)];
+  const address = addresses[getRandNum(0, addresses.length - 1)];
+  const username = getUserName(firstName, lastName);
+  const phone = Math.floor(getRandNum(9000000000, 1000000000));
+
+  users.push({
+   id: index + 1,
+   firstName,
+   lastName,
+   username: username,
+   age: getRandNum(21, 65),
+   email: `${getUserName(firstName, lastName)}@${getRandomDomain()}.com`,
+   address,
+   phone,
+   phoneFormatted: formatePhoneNum(phone),
+   website: `www.${username}.com`,
+  });
+ }
+
+ res.send({ status: 200, users });
 });
 
 module.exports = router;
-
-/*
-id
-firstName
-lastName
-username
-age
-email
-phone
-address
-website
-
-*/

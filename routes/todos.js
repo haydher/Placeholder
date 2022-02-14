@@ -10,9 +10,9 @@ router.get("/:length?", async (req, res) => {
  const param = Math.abs(parseInt(req.params.length)) >= limit ? limit : Math.abs(parseInt(req.params.length));
  const length = param || 1;
 
- const data = [];
+ const todos = [];
  for (let index = 0; index < length; index++) {
-  data.push({
+  todos.push({
    id: index + 1,
    title: `${todoTitles[Math.floor(Math.random() * (todoTitles.length - 0 + 1)) + 0]}`,
    description: getRandStr(),
@@ -22,7 +22,7 @@ router.get("/:length?", async (req, res) => {
   });
  }
 
- res.send({ status: 200, data });
+ res.send({ status: 200, todos });
 });
 
 module.exports = router;
