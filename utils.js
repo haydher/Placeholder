@@ -1,4 +1,13 @@
-const { firstNames, lastNames, postTitles, comments, womanThumbnails, manThumbnails, addresses } = require("./db");
+const {
+ firstNames,
+ lastNames,
+ postTitles,
+ comments,
+ womanThumbnails,
+ manThumbnails,
+ addresses,
+ pictures,
+} = require("./db");
 
 // return random string based on whats given with min and max length
 const getRandStr = (str, minLength, maxLength) => {
@@ -89,7 +98,7 @@ const getRandPosts = (index, commentsArr) => {
   id: postIndex + 1,
   username: getUserName(),
   thumbnail: getRandThumbnail(),
-  pictures: [getRandThumbnail(), getRandThumbnail(), getRandThumbnail(), getRandThumbnail(), getRandThumbnail()],
+  pictures: getRandPostPic(),
   description: getRandDescription(),
   upVotes: getRandNum(0, 1000),
   downVotes: getRandNum(0, 500),
@@ -97,6 +106,19 @@ const getRandPosts = (index, commentsArr) => {
   uploadDateISO: uploadDate.toISOString(),
   comments: commentsArr,
  };
+};
+
+//
+// returns an array of random pictures
+const getRandPostPic = (arrLimit) => {
+ const limit = parseInt(arrLimit) || getRandNum(1, 5);
+
+ const imgsArr = [];
+ for (let index = 0; index < limit; index++) {
+  imgsArr.push(pictures[getRandNum(0, pictures.length - 1)]);
+ }
+
+ return imgsArr;
 };
 
 //
@@ -210,4 +232,5 @@ module.exports = {
  getRandPosts,
  getRandCommentObj,
  getRandUser,
+ getRandPostPic,
 };
