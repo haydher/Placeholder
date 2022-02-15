@@ -12,7 +12,7 @@ require("dotenv").config();
 const app = express();
 
 // for testing number of proxies for rate limit to work
-app.set("trust proxy", process.env.PROXY_NUMBERS);
+app.set("trust proxy", 1);
 
 app.use(cors());
 
