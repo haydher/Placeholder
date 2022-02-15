@@ -17,7 +17,7 @@ router.get("/:param?", async (req, res) => {
   res.redirect(imgURL);
  } catch (error) {
   console.log("error in sending data");
-  res.send("unable to send data");
+  res.status(500).send({ status: 500, error: "Unable to process request, please try again later." });
  }
 });
 

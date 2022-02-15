@@ -31,7 +31,7 @@ router.get("/:length?", (req, res) => {
   posts.push(getRandPosts(index, commentsArr));
  }
 
- res.send({ status: 200, posts });
+ res.status(200).send({ status: 200, posts });
 });
 
 module.exports = router;

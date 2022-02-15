@@ -12,25 +12,26 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
+// for all end points other than photos
 const limiter = rateLimit({
- //  windowMs: 15 * 60 * 1000, // 15 minutes
  windowMs: 1 * 60 * 1000, // 1 minute
- max: 1, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+ max: 30, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
- handler: (req, res, next, options) => res.status(429).send({ error: "Rate limit has reach. Please try again later." }),
+ handler: (req, res, next, options) =>
+  res.status(429).send({ status: 429, error: "Rate limit has reach. Please try again later." }),
 });
 
 // Apply the rate limiting middleware to all requests
-app.use(limiter);
+// app.use(limiter);
 
-app.use("/photo", picture);
-app.use("/todos", todos);
-app.use("/users", users);
-app.use("/posts", posts);
+app.use("/photos", picture);
+app.use("/todos", limiter, todos);
+app.use("/users", limiter, users);
+app.use("/posts", limiter, posts);
 
 app.get("/", (req, res) => {
- res.send("Hello World");
+ res.send("Hi mom!");
 });
 
 const port = process.env.PORT || 3000;

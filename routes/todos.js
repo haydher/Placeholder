@@ -22,7 +22,7 @@ router.get("/:length?", async (req, res) => {
   });
  }
 
- res.send({ status: 200, todos });
+ res.status(200).send({ status: 200, todos });
 });
 
 module.exports = router;
