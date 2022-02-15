@@ -10,6 +10,10 @@ const posts = require("./routes/posts");
 require("dotenv").config();
 
 const app = express();
+
+// for testing number of proxies for rate limit to work
+app.set("trust proxy", process.env.PROXY_NUMBERS);
+
 app.use(cors());
 
 // for all end points other than photos
@@ -35,7 +39,6 @@ app.get("/", (req, res) => {
 });
 
 // for testing number of proxies for rate limit to work
-app.set("trust proxy", process.env.PROXY_NUMBERS);
 app.get("/test/api/ip", (request, response) => response.send(request.ip));
 
 const port = process.env.PORT || 3000;
