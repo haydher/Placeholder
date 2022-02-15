@@ -14,8 +14,8 @@ app.use(cors());
 
 // for all end points other than photos
 const limiter = rateLimit({
- windowMs: 1 * 60 * 1000, // 1 minute
- max: 30, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+ windowMs: process.env.API_LIMIT_MINUTE * 60 * 1000, // 1 minute
+ max: process.env.API_MAX_LIMIT, // Limit each IP to 30 requests per `window` (here, per 1 minutes)
  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
  handler: (req, res, next, options) =>
@@ -33,6 +33,10 @@ app.use("/posts", limiter, posts);
 app.get("/", (req, res) => {
  res.send("Hi mom!");
 });
+
+// for testing number of proxies for rate limit to work
+app.set("trust proxy", process.env.PROXY_NUMBERS);
+app.get("/test/api/ip", (request, response) => response.send(request.ip));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`connected to the port ${port}`));
