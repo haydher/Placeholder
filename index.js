@@ -6,6 +6,7 @@ const picture = require("./routes/picture");
 const todos = require("./routes/todos");
 const users = require("./routes/users");
 const posts = require("./routes/posts");
+const comments = require("./routes/comments");
 
 require("dotenv").config();
 
@@ -33,6 +34,7 @@ app.use("/photos", picture);
 app.use("/todos", limiter, todos);
 app.use("/users", limiter, users);
 app.use("/posts", limiter, posts);
+app.use("/comments", limiter, comments);
 
 app.get("/", (req, res) => {
  res.send("Hi mom!");
