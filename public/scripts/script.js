@@ -3,8 +3,8 @@ const comments = document.querySelector("#comments");
 const users = document.querySelector("#users");
 const todos = document.querySelector("#todos");
 
-// const hostURL = `${window.location.protocol}//${window.location.hostname}`;
-const hostURL = `https://placeholder-api-dev.herokuapp.com`;
+const hostURL = `${window.location.protocol}//${window.location.hostname}`;
+// const hostURL = `https://placeholder-api-dev.herokuapp.com`;
 
 const fetchData = [
  {
