@@ -130,7 +130,6 @@
  align-items: center;
  height: 50px;
  width: 50px;
- padding: 20px;
  border: 1px solid #444444;
  border-radius: 100px;
  cursor: pointer;
@@ -177,6 +176,7 @@
  position: relative;
  z-index: 5;
  min-width: 35vw !important;
+ max-width: 35vw !important;
  border-radius: 5px;
  font-size: 14px;
  margin: 30px 64px;

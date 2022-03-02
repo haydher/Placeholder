@@ -102,10 +102,10 @@ let transformWidth = 0;
 let cardsIncrement = 1;
 
 // get the dimensions of the card
-const cardStyle = cards[0].currentStyle || window.getComputedStyle(cards[0]);
-const cardWidth = parseInt(cardStyle.width);
-const cardMargin = parseInt(cardStyle.marginRight);
+const cardWidth = Math.floor((window.innerWidth / 100) * 35); // card width is 35vw. this get 35% of the screen width
+const cardMargin = 64; // card margin is 64px // couldnt get it with js
 
+//
 [slideLeftBtn, slideRightBtn].forEach((btn, index) => {
  btn.addEventListener("click", () => {
   // left button
@@ -140,12 +140,16 @@ function toggleSliderBtn() {
 // align the slider buttons relative to the card so the buttons are aligned centered of two cards
 getSliderDistance();
 function getSliderDistance() {
- const cardStyle = cards[0].currentStyle || window.getComputedStyle(cards[0]);
- const cardWidth = parseInt(cardStyle.width);
- const cardMargin = parseInt(cardStyle.marginRight);
+ // card width is 35vw. this get 35% of the screen width
+ const cardWidth = Math.floor((window.innerWidth / 100) * 35);
+ // card margin is 64px // couldnt get it with js
+ const cardMargin = 64;
+ // sliderBtn width is 50px, 50 / 2 is 25. we want the 25 to get the center
+ // 54 because 50 was not perfectly centered for some reason, 54 makes it perfectly centered
+ const sliderBtnWidth = 54 / 2;
+ const distanceLeft = (window.innerWidth - cardWidth) / 2 - cardMargin - sliderBtnWidth;
+ const distanceRight = (window.innerWidth - cardWidth) / 2 + cardWidth + cardMargin - sliderBtnWidth;
 
- const distanceLeft = cards[0].offsetLeft - cardMargin - slideLeftBtn.offsetWidth / 2;
- const distanceRight = cards[0].offsetLeft + cardWidth + cardMargin - slideLeftBtn.offsetWidth / 2;
  slideLeftBtn.style.left = `${distanceLeft}px`;
  slideRightBtn.style.left = `${distanceRight}px`;
 }
