@@ -9,22 +9,22 @@ const hostURL = `https://placeholder-api-dev.herokuapp.com`;
 const fetchData = [
  {
   url: `${hostURL}/posts/1?comments=2`,
-  message: "// Get randomly generated users with actual data",
+  message: "// Get randomly generated posts with with comments",
   domElement: posts,
  },
  {
   url: `${hostURL}/users/4`,
-  message: "// Get randomly generated users with actual data",
+  message: "// Get randomly generated users with addresses and pictures",
   domElement: users,
  },
  {
   url: `${hostURL}/todos/4`,
-  message: "// Get randomly generated users with actual data",
+  message: "// Get randomly generated todos",
   domElement: todos,
  },
  {
   url: `${hostURL}/comments/4`,
-  message: "// Get randomly generated users with actual data",
+  message: "// Get randomly generated comments for user info",
   domElement: comments,
  },
 ];
