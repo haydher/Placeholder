@@ -3,8 +3,8 @@ const comments = document.querySelector("#comments");
 const users = document.querySelector("#users");
 const todos = document.querySelector("#todos");
 
-const hostURL = `${window.location.protocol}//${window.location.hostname}`;
-// const hostURL = `https://placeholder-api-dev.herokuapp.com`;
+// const hostURL = `${window.location.protocol}//${window.location.hostname}`;
+const hostURL = `https://placeholder-api-dev.herokuapp.com`;
 
 const fetchData = [
  {
@@ -13,17 +13,17 @@ const fetchData = [
   domElement: posts,
  },
  {
-  url: `${hostURL}/users/2`,
+  url: `${hostURL}/users/4`,
   message: "// Get randomly generated users with actual data",
   domElement: users,
  },
  {
-  url: `${hostURL}/todos/2`,
+  url: `${hostURL}/todos/4`,
   message: "// Get randomly generated users with actual data",
   domElement: todos,
  },
  {
-  url: `${hostURL}/comments/2`,
+  url: `${hostURL}/comments/4`,
   message: "// Get randomly generated users with actual data",
   domElement: comments,
  },
@@ -60,12 +60,18 @@ const updateCard = (json, obj) => {
   `;
 
  // add event listener to copy code
- copyCode.addEventListener("click", () =>
+ copyCode.addEventListener("click", () => {
+  // show fetch copied message
+  const copyCodeMsg = copyCode.querySelector(".copyMsg");
+  copyCodeMsg.style.opacity = 1;
+  setTimeout(() => (copyCodeMsg.style.opacity = 0), 1000);
+
+  // copy code to clipboard
   navigator.clipboard.writeText(`
     fetch('${obj.url}')
     .then(response => response.json())
-    .then(json => console.log(json))`)
- );
+    .then(json => console.log(json))`);
+ });
 
  // update the json
  const newPre = document.createElement("pre");
