@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+let ejs = require("ejs");
 const rateLimit = require("express-rate-limit");
 
 const picture = require("./routes/picture");
@@ -14,8 +15,9 @@ const app = express();
 
 // for testing number of proxies for rate limit to work
 app.set("trust proxy", 1);
-
+app.set("view engine", "ejs");
 app.use(cors());
+app.use(express.static(__dirname + "/public"));
 
 // for all end points other than photos
 const limiter = rateLimit({
@@ -37,7 +39,7 @@ app.use("/posts", limiter, posts);
 app.use("/comments", limiter, comments);
 
 app.get("/", (req, res) => {
- res.send("Hi mom!");
+ res.render("index");
 });
 
 // for testing number of proxies for rate limit to work
