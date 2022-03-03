@@ -10,7 +10,7 @@ Placeholder provides randomly generated JSON data for front-end developers to te
 
 You can clone this project for your personal use.
 
-Open command prompt and type `git clone https://github.com/haydher/dev-api.git` to clone the app.
+Open the command prompt and type `git clone https://github.com/haydher/dev-api.git` to clone the app.
 
 Then run `npm install` to install the dependencies
 
@@ -22,17 +22,17 @@ You can fetch the following commands:
 
 Get one randomly generated JSON data of a post. Change how many posts you want in return by adding “/” and your number. For example, “/posts/5” to get an array of 5 posts. Max number is 50.
 
-Posts can also return an array of comments if query is provided. You can request comments by add “?comments=X” to get the X number of comments. Max number is 20.
+Posts can also return an array of comments if the query is provided. You can request comments by adding “?comments=X” to get the X number of comments. Max number is 20.
 
 ### /comments
 
-Get one randomly generated JSON data of a comments. Change how many comments you want in return by adding “/” and your number. For example, “/comments/5” to get an array of 5 comments. Max number is 50.
+Get one randomly generated JSON data of comments. Change how many comments you want in return by adding “/” and your number. For example, “/comments/5” to get an array of 5 comments. Max number is 50.
 
 ### /users
 
 Get one randomly generated JSON data of a user. Change how many posts you want in return by adding “/” and your number. For example, “/users/5” to get an array of 5 users. Max number is 50.
 
-Users also include an object of address. The addresses are not related to the user and its randomly generated.
+Users also include an object of address. The addresses are not related to the user and it's randomly generated.
 
 ### /todos
 
@@ -40,10 +40,18 @@ Get one randomly generated JSON data of a post. Change how many todos you want i
 
 ---
 
-You can use fetch API to access the routes. For example,
+You can use the fetch API to access the routes. For example,
 
 ```js
 fetch("http://localhost:3000/posts/1?comments=2")
+ .then((response) => response.json())
+ .then((json) => console.log(json));
+```
+
+Or you can use directly from the website
+
+```js
+fetch("https://placeholder-api-dev.herokuapp.com/posts/1?comments=2")
  .then((response) => response.json())
  .then((json) => console.log(json));
 ```
